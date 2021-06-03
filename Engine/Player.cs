@@ -1,4 +1,5 @@
 using System;
+using Engine.GameObject;
 
 namespace Engine
 {
@@ -9,6 +10,7 @@ namespace Engine
         public int Gold { get; set; }
         public int Exp { get; set; }
         public int Level { get; set; }
+        public int Damage { get; set; }
 
 
 
@@ -19,6 +21,7 @@ namespace Engine
             Gold = gold;
             Exp = 0;
             Level = 1;
+            Damage = 1;
         }
 
         public Player()
@@ -28,6 +31,13 @@ namespace Engine
             Gold = 10;
             Exp = 0;
             Level = 1;
+            Damage = 1;
+        }
+
+        public void Attack(Monster monster)
+        {
+            monster.CurrentHitPoints -= this.Damage;
+            monster.Attacked();
         }
         
     }

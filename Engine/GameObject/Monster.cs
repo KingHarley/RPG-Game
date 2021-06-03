@@ -1,6 +1,6 @@
 using System;
 
-namespace GameObject
+namespace Engine.GameObject
 {
     public class Monster
     {
@@ -15,9 +15,29 @@ namespace GameObject
             Damage = 0;
         }
 
+        public void Attacked()
+        {
+            Speak();
+            if(CurrentHitPoints <= 0)
+            {
+                DeSpawn();
+            }
+        }
+
         public virtual void Speak()
         {
             Console.WriteLine("Blurg");
+        }
+
+
+        public virtual void Spawn()
+        {
+            Console.WriteLine("A wild monster appears!");
+        }
+
+        public virtual void DeSpawn()
+        {
+            Console.WriteLine("The monster was slain");
         }
     }
 }

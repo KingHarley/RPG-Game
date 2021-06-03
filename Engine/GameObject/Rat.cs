@@ -1,7 +1,7 @@
 using System;
 
 
-namespace GameObject
+namespace Engine.GameObject
 {
     public class Rat : Monster
     {
@@ -15,6 +15,16 @@ namespace GameObject
         public override void Speak()
         {
             Console.WriteLine("Squeeeee");
+        }
+
+        public override void Spawn()
+        {
+            Console.WriteLine("A wild rat appears!");
+        }
+
+        public override void DeSpawn()
+        {
+            Console.WriteLine("The rat was slain!");
         }
     }
 }

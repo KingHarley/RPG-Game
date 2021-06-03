@@ -20,15 +20,21 @@ namespace Engine
             }
             
             isRunning = true;
+            _myGame.Load();
 
             while(isRunning)
             {
-                _myGame.Load();
+                
                 Console.Write("Input: ");
                 input = _myGame.Input();
-                if (String.Equals(input, "Exit"))
+                
+                if(input == "exit")
                 {
                     break;
+                }
+                else if(input == "attack")
+                {
+                    _myGame.HandleInput(input);
                 }
             }
             return 0;
